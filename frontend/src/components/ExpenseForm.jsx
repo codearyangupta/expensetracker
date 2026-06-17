@@ -30,7 +30,7 @@ const [category, setCategory] = useState("");
     try {
       if (editingExpense) {
   await axios.put(
-    `http://127.0.0.1:8000/expenses/${editingExpense.id}`,
+    `https://expensetracker-1-dqim.onrender.com/expenses/${editingExpense.id}`,
     {
       title,
       amount: Number(amount),
@@ -49,7 +49,7 @@ const [category, setCategory] = useState("");
   return;
 }
 
-      await axios.post("http://127.0.0.1:8000/expenses", {
+      await axios.post("https://expensetracker-1-dqim.onrender.com/expenses", {
         title,
         amount: Number(amount),
         category,
