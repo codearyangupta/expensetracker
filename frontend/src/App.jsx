@@ -7,6 +7,9 @@ import PieChartComponent from "./components/PieChartComponent";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 
+
+const API_URL = "https://expensetracker-1-dqim.onrender.com/";
+
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [editingExpense, setEditingExpense] = useState(null);
@@ -16,7 +19,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const fetchExpenses = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/expenses"
+        "https://expensetracker-1-dqim.onrender.com//expenses"
       );
 
       setExpenses(response.data);
@@ -28,7 +31,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const deleteExpense = async (id) => {
   try {
     await axios.delete(
-      `http://127.0.0.1:8000/expenses/${id}`
+      `https://expensetracker-1-dqim.onrender.com//expenses/${id}`
     );
 
     fetchExpenses();
@@ -40,7 +43,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const updateExpense = async (id, updatedData) => {
   try {
     await axios.put(
-      `http://127.0.0.1:8000/expenses/${id}`,
+      `https://expensetracker-1-dqim.onrender.com//expenses/${id}`,
       updatedData
     );
 
