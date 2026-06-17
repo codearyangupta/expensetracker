@@ -19,7 +19,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const fetchExpenses = async () => {
     try {
       const response = await axios.get(
-        "https://expensetracker-1-dqim.onrender.com//expenses"
+        "https://expensetracker-1-dqim.onrender.com/expenses"
       );
 
       setExpenses(response.data);
@@ -31,7 +31,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const deleteExpense = async (id) => {
   try {
     await axios.delete(
-      `https://expensetracker-1-dqim.onrender.com//expenses/${id}`
+      `https://expensetracker-1-dqim.onrender.com/expenses/${id}`
     );
 
     fetchExpenses();
@@ -43,7 +43,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   const updateExpense = async (id, updatedData) => {
   try {
     await axios.put(
-      `https://expensetracker-1-dqim.onrender.com//expenses/${id}`,
+      `https://expensetracker-1-dqim.onrender.com/expenses/${id}`,
       updatedData
     );
 
